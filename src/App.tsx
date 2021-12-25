@@ -4,6 +4,7 @@ import { useCookie } from 'react-use';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import Profile from './pages/Profile/Profile';
 import Register from './pages/Register/Register';
 
 export interface ResponseError extends Error {
@@ -47,6 +48,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             }
           />

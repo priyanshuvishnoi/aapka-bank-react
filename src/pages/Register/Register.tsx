@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CircularProgress } from 'react-cssfx-loading';
 import axios from 'axios';
 import useStyles from './styles';
@@ -28,9 +28,11 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { updateCookie, token } = useContext(TokenContext);
+  const { updateCookie, token, deleteCookie } = useContext(TokenContext);
   const navigate = useNavigate();
   const { baseUrl } = config;
+
+  useEffect(() => deleteCookie!(), []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,6 +57,19 @@ function Register() {
     try {
       const response = await axios.post(baseUrl + 'user/register', data);
       console.log(response);
+
+      await axios.post(
+        baseUrl + 'wallet/addMoney',
+        {
+          currentBalance: 100,
+        },
+        {
+          headers: {
+            authorization: `Bearer ${response.data.token}`,
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }
+      );
       updateCookie!(response.data.token);
       navigate('/');
     } catch (err: any) {
@@ -117,10 +132,12 @@ function Register() {
               <MenuItem value={'female'}>Female</MenuItem>
             </Select>
           </FormControl>
+
           <TextField
             value={date}
             label="Date of Birth"
             type="date"
+            placeholder="dd/mm/yyyy"
             className={styles.formInput}
             onChange={e => setDate(e.target.value)}
             InputLabelProps={{ shrink: true }}
