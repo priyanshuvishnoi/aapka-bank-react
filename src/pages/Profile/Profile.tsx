@@ -31,7 +31,7 @@ function Profile() {
   const [accountNo, setAccountNo] = useState('');
   const [currentBalance, setCurrentBalance] = useState(0);
   const [addMoney, setAddMoney] = useState(0);
-  const { token, updateCookie } = useContext(TokenContext);
+  const { token } = useContext(TokenContext);
   const { baseUrl } = config;
 
   useEffect(() => {

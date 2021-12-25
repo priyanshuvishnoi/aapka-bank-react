@@ -31,7 +31,7 @@ function Home() {
         <Grid item xs={12}>
           <Grid container spacing={10}>
             <div style={{ padding: '30px' }}>
-              <Button onClick={() => navigate('transfer')}>
+              <Button onClick={() => navigate('/transfer')}>
                 <Grid key={0} item>
                   <Paper
                     className={styles.paper}

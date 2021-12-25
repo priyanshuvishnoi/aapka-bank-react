@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import Register from './pages/Register/Register';
+import TransferMoney from './pages/TransferMoney/TransferMoney';
 
 export interface ResponseError extends Error {
   status: string;
@@ -56,6 +57,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/transfer"
+            element={
+              <ProtectedRoute>
+                <TransferMoney />
               </ProtectedRoute>
             }
           />
