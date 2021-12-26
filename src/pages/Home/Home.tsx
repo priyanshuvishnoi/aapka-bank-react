@@ -89,7 +89,7 @@ function Home() {
               </Button>
             </div>
             <div style={{ padding: '30px' }}>
-              <Button onClick={() => navigate('Transactions')}>
+              <Button onClick={() => navigate('/history')}>
                 <Grid key={2} item>
                   <Paper
                     className={styles.paper}

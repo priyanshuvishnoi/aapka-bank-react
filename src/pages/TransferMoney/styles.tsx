@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme: DefaultTheme) =>
       placeItems: 'center',
       minHeight: 'calc(100vh - 80px)',
       display: 'grid',
-      backgroundImage:
-        'linear-gradient(144deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)',
+      // backgroundImage:
+      //   'linear-gradient(144deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)',
       fontSize: '2rem',
     },
     box: {
@@ -44,8 +44,8 @@ const useStyles = makeStyles((theme: DefaultTheme) =>
     },
 
     button: {
-      background:
-        'linear-gradient(144deg, rgba(252,70,107,1) 0%,rgba(63,94,251,1)  100%)',
+      background: 'blue',
+      // 'linear-gradient(144deg, rgba(252,70,107,1) 0%,rgba(63,94,251,1)  100%)',
       color: '#fff',
       fontSize: '2rem',
       margin: '2rem 0 0 0',

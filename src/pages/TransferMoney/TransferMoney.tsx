@@ -58,7 +58,9 @@ function TransferMoney() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true);
+    setError('');
     try {
+      console.log(receiverAccount);
       const formData = {
         from: parseInt(currentAccount),
         to: parseInt(receiverAccount),
@@ -76,7 +78,7 @@ function TransferMoney() {
       navigate('/');
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error(error);
+        setError(error.response?.data.message);
       }
     }
     setLoading(false);
@@ -120,7 +122,7 @@ function TransferMoney() {
               {accounts
                 .filter((account: any) => account.accountNo !== currentAccount)
                 .map((account: any) => (
-                  <MenuItem value={account} key={account.accountNo}>
+                  <MenuItem value={account.accountNo} key={account.accountNo}>
                     {account.name + ' ' + account.accountNo}
                   </MenuItem>
                 ))}
