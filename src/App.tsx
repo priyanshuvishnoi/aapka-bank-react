@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useCookie } from 'react-use';
 import ProtectedRoute from './components/ProtectedRoute';
+import AddTransaction from './pages/AddTransaction/AddTransaction';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
@@ -74,6 +75,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <TransactionHistory />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/addTransaction"
+            element={
+              <ProtectedRoute>
+                <AddTransaction />
               </ProtectedRoute>
             }
           />

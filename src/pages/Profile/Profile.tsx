@@ -17,7 +17,7 @@ import { AccountCircle, Money } from '@material-ui/icons';
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { TokenContext } from '../../App';
-import * as config from '../../config.json';
+import config from '../../config';
 import useStyles from '../Login/styles';
 
 function Profile() {

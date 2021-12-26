@@ -14,15 +14,17 @@ const useStyles = makeStyles(theme => ({
   header: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
+    height: '50vh',
+    backgroundColor: '#F4A124',
   },
   heading: {
-    fontFamily: 'Calibri',
+    fontFamily: 'Roboto',
     fontSize: 40,
     padding: '90px',
   },
   slogan: {
-    fontFamily: 'Calibri',
+    fontFamily: 'Roboto',
     fontSize: 20,
     color: 'teal',
     fontStyle: 'italic',

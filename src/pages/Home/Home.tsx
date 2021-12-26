@@ -18,7 +18,7 @@ function Home() {
     <main>
       <header className={styles.header}>
         <div>
-          <img src={BankSvg} alt="Bank" height={100} width={100} />
+          <img src={BankSvg} alt="Bank" height={200} width={200} />
         </div>
         <div>
           <h1 className={styles.heading}>
@@ -60,7 +60,7 @@ function Home() {
               </Button>
             </div>
             <div style={{ padding: '30px' }}>
-              <Button onClick={() => navigate('addTransaction')}>
+              <Button onClick={() => navigate('/addTransaction')}>
                 <Grid key={1} item>
                   <Paper
                     className={styles.paper}
@@ -81,7 +81,7 @@ function Home() {
                           color: 'white',
                         }}
                       >
-                        Add Transaction Details
+                        Add Transaction Details Manually
                       </h1>
                     </span>
                   </Paper>

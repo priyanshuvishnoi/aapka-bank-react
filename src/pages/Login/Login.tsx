@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CircularProgress } from 'react-cssfx-loading';
 import axios from 'axios';
 import useStyles from './styles';
-import * as config from '../../config.json';
+import config from '../../config';
 import { ResponseError, TokenContext } from '../../App';
 import { Navigate, useNavigate } from 'react-router-dom';
 

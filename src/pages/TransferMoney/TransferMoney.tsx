@@ -13,7 +13,7 @@ import { Alert } from '@material-ui/lab';
 import axios from 'axios';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import useStyles from './styles';
-import * as config from '../../config.json';
+import config from '../../config';
 import { TokenContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 
